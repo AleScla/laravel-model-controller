@@ -1,13 +1,22 @@
 @extends('layouts.app')
 
-@section('page-title', 'Home')
-
 @section('main-content')
-<h1>
-    Laravel Start 1
-</h1>
+    <div class="container">
+        <div class="row">
+            @foreach($movies as $movie)
+            <div class="col-6 g-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$movie->title}}</h5>
+                        <p class="card-text">Original Title: {{$movie->original_title}}</p>
+                        <p class="card-text">Nationality: {{$movie->nationality}}</p>
+                        <p class="card-text">Publication date: {{$movie->date}}</p>
+                        <p class="card-text">Vote: {{$movie->vote}}</p>
 
-<h2>
-    Ciao {{ $firstName }} {{ $lastName }}
-</h2>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
 @endsection
